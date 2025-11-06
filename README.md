@@ -52,6 +52,7 @@ Educational project to learn Algorand blockchain development using Python.
 - [Algorand Developer Portal](https://developer.algorand.org/)
 - [AlgoKit Documentation](https://github.com/algorandfoundation/algokit-cli)
 - [Algokit Utils Documentation](https://algorandfoundation.github.io/algokit-utils-py/#)
+- [Algokit Utils notebook example](https://github.com/algorandfoundation/algokit-templates/tree/main/examples/python-utils-notebook)
 
 ## 🙏 Acknowledgments
 
