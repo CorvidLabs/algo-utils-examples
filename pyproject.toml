@@ -1,0 +1,21 @@
+[project]
+name = "algo-utils-examples"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Kyn",email = "kyn.algo@pm.me"}
+]
+readme = "README.md"
+requires-python = ">=3.14,<4.0"
+dependencies = [
+    "python-dotenv (>=1.2.1,<2.0.0)",
+    "algokit-utils (>=4.2.2,<5.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "algo_utils_examples", from = "src"}]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
