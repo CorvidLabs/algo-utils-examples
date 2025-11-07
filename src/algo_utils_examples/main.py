@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 from algokit_utils.config import config
 import logging
 from algokit_utils import AlgorandClient, PaymentParams, AlgoAmount
-from .accounts import create_account
+from .accounts import create_account, get_balance
 from .transaction import payment, group_transaction
 
 logger = logging.getLogger(__name__)
@@ -24,10 +24,16 @@ def main():
     algorand = AlgorandClient.default_localnet()
 
     # Using the create account function to make two accounts on localnet.
-    joao = create_account(algorand, "JOAO", 50)
-    print(f"joao account {joao.address}")
-    jose = create_account(algorand, "JOSE", 100)
-    print(f"jose account {jose.address}")
+    joao = create_account(algorand, "JOAO", 5000)
+    print(
+        f"\njoao account {joao.address}"
+        f"View it on lora at https://lora.algokit.io/localnet/transaction/{joao.address}"
+    )
+    jose = create_account(algorand, "JOSE", 10000)
+    print(
+        f"jose account {jose.address}"
+        f"View it on lora at https://lora.algokit.io/localnet/transaction/{jose.address}"
+    )
 
     # Making a test payment from jose to joao of 25 algos.
     tx = payment(algorand, jose, joao, 25, "Test transaction")
@@ -50,6 +56,14 @@ def main():
 
     # Executing the atomic group transaction (all succeed or all fail together)
     result = group_transaction(algorand, params)
+    
+    # Check the balance on the accounts
+    joao_balance = get_balance(algorand,joao.address)
+    jose_balance = get_balance(algorand, jose.address)
+    print(
+        f"\nJoão account balance: {joao_balance}"
+        f"\nJosé account balance: {jose_balance}"
+    )
     
 if __name__ == "__main__":
     main()
