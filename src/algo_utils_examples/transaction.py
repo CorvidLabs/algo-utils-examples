@@ -1,6 +1,7 @@
 from algokit_utils import AlgorandClient, AlgoAmount, PaymentParams
 from algokit_utils.models import SigningAccount
 
+
 def payment(algorand: AlgorandClient, sender: SigningAccount, receiver: SigningAccount, amount: float, note: bytes = b""):
     tx = algorand.send.payment(
         PaymentParams(

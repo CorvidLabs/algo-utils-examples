@@ -1,5 +1,6 @@
 from algokit_utils import AlgorandClient, AlgoAmount
 
+
 # Create one localnet account. Note: This function won't work to create a new
 # account on testnet/mainnet
 def create_account(algorand: AlgorandClient, name: str, balance_algo: float):
@@ -10,3 +11,13 @@ def create_account(algorand: AlgorandClient, name: str, balance_algo: float):
 def get_balance(algorand: AlgorandClient, address: str):
     account_info = algorand.account.get_information(address)
     return account_info.amount.algo
+
+
+def create_testnet_account(algorand: AlgorandClient):
+    account = algorand.account.random()
+    print(f"Account address: {account.address}")
+    print(f"SAVE THIS MNEMONIC SECURELY - You'll need it to recover this account!")
+    print(f"Account mnemonic: {account.private_key}")
+    print(f"Fund this account at: https://bank.testnet.algorand.network/")
+    
+    return account
