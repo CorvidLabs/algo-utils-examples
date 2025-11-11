@@ -4,6 +4,7 @@ import logging
 from algokit_utils import AlgorandClient, PaymentParams, AlgoAmount
 from .accounts import create_account, get_balance
 from .transaction import payment, group_transaction
+from .assets import create_asset, opt_in, assets_transfer
 
 logger = logging.getLogger(__name__)
 
@@ -65,5 +66,28 @@ def main():
         f"\nJosé account balance: {jose_balance}"
     )
     
+    #Create the Buuh ASA
+    buuh = create_asset(
+        algorand,
+        joao.address,
+        "Buuh Coin",
+        "BUH",
+        1_000_000_000_000,
+        6
+    )
+    
+    #Jose opt-in in the buuh coin.
+    jose_opt_in = opt_in(algorand, jose.address, buuh)
+    
+    #Joao sending some buuh coins to jose
+    joao_asset_transfer = assets_transfer(
+        algorand,
+        joao.address,
+        jose.address,
+        buuh,
+        3_000_000,
+        "Test transfer"
+        
+    )
 if __name__ == "__main__":
     main()
