@@ -22,6 +22,7 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
         cache: 'poetry'
+        cache-dependency-path: '**/poetry.lock'
     
     - name: Install Poetry
       uses: snok/install-poetry@v1
@@ -71,6 +72,7 @@ jobs:
       with:
         python-version: "3.14"
         cache: 'poetry'
+        cache-dependency-path: '**/poetry.lock'
     
     - name: Install Poetry
       uses: snok/install-poetry@v1
