@@ -3,7 +3,6 @@
 ![Python](https://img.shields.io/badge/python-3.14-blue.svg)
 ![Algorand](https://img.shields.io/badge/blockchain-Algorand-00D1B2.svg)
 ![AlgoKit](https://img.shields.io/badge/AlgoKit-Utils-orange.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Learning](https://img.shields.io/badge/project-educational-yellow.svg)
 
 Educational project demonstrating Algorand blockchain development using Python and AlgoKit Utils. This repository provides practical examples of account management, transactions, and asset operations on the Algorand blockchain.
