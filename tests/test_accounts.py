@@ -6,7 +6,6 @@ from algokit_utils.config import config
 from algokit_utils import AlgorandClient
 from algo_utils_examples.accounts import create_account, get_balance
 
-
 def test_create_account_and_verify():
     """Test that we can create an Algorand client and create an account."""
     # Loading environment variables
