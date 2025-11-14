@@ -46,11 +46,17 @@ jobs:
     
     - name: Run tests
       run: |
-        if [ -d "tests" ] && [ "$(ls -A tests/*.py 2>/dev/null)" ]; then
+        if [ -d "tests" ]; then
           poetry add --group dev pytest || true
-          poetry run pytest tests/ -v
+          poetry run pytest tests/ -v; EXIT_CODE=$?
+          # Exit code 5 means no tests were collected, which is OK
+          if [ $EXIT_CODE -eq 5 ]; then
+            echo "No tests collected, but this is OK"
+            exit 0
+          fi
+          exit $EXIT_CODE
         else
-          echo "No tests found, skipping test execution"
+          echo "No tests directory found, skipping test execution"
         fi
     
     - name: Check imports
