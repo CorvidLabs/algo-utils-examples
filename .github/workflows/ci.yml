@@ -47,11 +47,6 @@ jobs:
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v3
     
-    - name: Install AlgoKit CLI
-      run: |
-        curl -fsSL https://raw.githubusercontent.com/algorandfoundation/algokit-cli/main/scripts/install/install.sh | sh
-        echo "$HOME/.algokit/bin" >> $GITHUB_PATH
-    
     - name: Start LocalNet
       run: |
         algokit localnet start --reset
