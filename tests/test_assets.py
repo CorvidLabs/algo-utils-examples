@@ -1,5 +1,5 @@
 import pytest
-from algokit_utils import SigningAccount, SendSingleTransactionResult
+from algokit_utils import SigningAccount
 from algokit_utils.algorand import AlgorandClient
 from algokit_utils.models.amount import AlgoAmount
 from algo_utils_examples.assets import create_asset, opt_in, opt_out, assets_transfer, get_asset_balance
@@ -51,6 +51,7 @@ def asset_id(algorand: AlgorandClient, funded_account_01: SigningAccount) -> int
     )
     return asset_id
 
+
 def test_create_asset(asset_id) -> None:
     assert isinstance(asset_id, int)
     assert asset_id > 0
@@ -63,11 +64,11 @@ def test_asset_transfer_workflow(
         asset_id: int
 ) -> None:
 
-    #Opt-in
+    # Opt-in
     opt_in_result = opt_in(algorand, funded_account_02.address, asset_id)
     assert opt_in_result.tx_id is not None
 
-    #Transfer
+    # Transfer
     transfer_result = assets_transfer(
         algorand,
         funded_account_01.address,
@@ -77,7 +78,9 @@ def test_asset_transfer_workflow(
     )
     assert transfer_result.tx_id is not None
 
-    #Checking balance
+    # Checking balance
+    sender_balance = get_asset_balance(algorand, funded_account_01.address, asset_id)
+    assert sender_balance == 1_000_000 - 50
     balance = get_asset_balance(algorand, funded_account_02.address, asset_id)
     assert balance == 50
 
@@ -89,16 +92,19 @@ def test_asset_opt_out_workflow(
         asset_id: int
 ) -> None:
 
-    #Opt-in
+    # Opt-in
     opt_in_result = opt_in(algorand, funded_account_02.address, asset_id)
     assert opt_in_result.tx_id is not None
     
-    #Opt-out
+    # Opt-out
     opt_out_result = opt_out(
         algorand,
         funded_account_02.address,
         funded_account_01.address,
         asset_id
     )
+    account_info = algorand.account.get_information(funded_account_02.address)
+    asset_holdings = account_info.assets
+    assert not any(holding['asset-id'] == asset_id for holding in asset_holdings)
     assert opt_out_result.tx_id is not None
     
