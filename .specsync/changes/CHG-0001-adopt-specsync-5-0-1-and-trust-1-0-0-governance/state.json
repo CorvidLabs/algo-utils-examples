@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "id": "CHG-0001-adopt-specsync-5-0-1-and-trust-1-0-0-governance",
+  "slug": "adopt-specsync-5-0-1-and-trust-1-0-0-governance",
+  "title": "Adopt SpecSync 5.0.1 and Trust 1.0.0 governance",
+  "description": "Adopt SpecSync 5.0.1 and Trust 1.0.0 governance",
+  "kind": "migration",
+  "state": "draft",
+  "base_commit": "75080733685c28e1a2da2fd639f5bbf5fa9cccab",
+  "created_at": 1783891929,
+  "updated_at": 1783891929,
+  "affected_specs": [],
+  "affected_paths": [
+    ".github/",
+    ".specsync/",
+    ".trust.toml",
+    ".augur.toml",
+    ".attest.json",
+    "fledge.toml",
+    "AGENTS.md"
+  ],
+  "no_spec_change": true,
+  "no_spec_change_rationale": "This migration changes repository governance and CI orchestration without changing product behavior or canonical requirements.",
+  "acceptance_criteria": [
+    "SpecSync 5.0.1 is stamped; all four agents are installed; Trust doctor and native verification pass; immutable Trust is used; existing workflows remain intact"
+  ],
+  "selected_artifacts": [
+    "context",
+    "research",
+    "design",
+    "plan",
+    "tasks",
+    "testing",
+    "docs"
+  ],
+  "dependencies": [],
+  "answers": {
+    "architecture_risk": "no",
+    "public_contract": "no"
+  }
+}

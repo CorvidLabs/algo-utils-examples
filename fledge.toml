@@ -1,0 +1,7 @@
+[tasks]
+localnet-test = "poetry run algokit localnet reset || true; poetry run algokit localnet start; poetry run pytest tests/ -v"
+imports = "poetry run python -c 'import algo_utils_examples; import algo_utils_examples.accounts; import algo_utils_examples.transaction; import algo_utils_examples.assets; from algo_utils_examples.main import main; print(\"imports and module structure verified\")'"
+
+[lanes.verify]
+description = "Run the native Python example and LocalNet verification boundary"
+steps = ["localnet-test", "imports"]
