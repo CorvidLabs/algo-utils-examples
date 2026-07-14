@@ -5,4 +5,4 @@ artifact: docs
 
 # Docs
 
-Managed agent guidance documents SpecSync 5.0.1, Trust 1.0.0, the preserved verification boundary, privacy constraints, and the rule that automation must not approve or close an owner's SDD change.
+The canonical SDD artifacts document the already-published helper and LocalNet behavior without changing the README or examples. Managed agent guidance documents SpecSync 5.0.1, Trust 1.0.0, the preserved verification boundary, privacy constraints, and the supported approval lifecycle.

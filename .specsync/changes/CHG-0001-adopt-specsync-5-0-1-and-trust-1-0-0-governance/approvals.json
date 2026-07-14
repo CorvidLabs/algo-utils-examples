@@ -1,3 +1,18 @@
 {
-  "approvals": []
+  "approvals": [
+    {
+      "gate": "definition",
+      "actor": "user:0xLeif",
+      "timestamp": 1783988049,
+      "digest": "6b5917b4dd12ccc79c3d0dac6de4e573b19fae27b0b6af046d893da23e348475",
+      "note": "Approved after reviewing the existing helper APIs, LocalNet tests, immutable workflow, ten stable requirements, and byte-for-byte product preservation."
+    },
+    {
+      "gate": "acceptance",
+      "actor": "user:0xLeif",
+      "timestamp": 1783988429,
+      "digest": "cc783182d7608b668275b1c42294e7bd75e4ca43f3ad88959e87ed79486a9eee",
+      "note": "Accepted after all ten requirements, strict 100% coverage, real Python 3.14 AlgoKit LocalNet tests, package imports, all four agents, and Trust doctor passed."
+    }
+  ]
 }

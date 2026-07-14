@@ -5,4 +5,4 @@ artifact: context
 
 # Context
 
-The repository currently relies on Python 3.14, Poetry, AlgoKit LocalNet tests, imports, and module validation. This change adds SpecSync 5.0.1 lifecycle metadata and a separate immutable Trust 1.0.0 gate.
+The repository publishes educational Python helpers for Algorand accounts, ALGO payments, atomic payment groups, and asset operations, plus a LocalNet demonstration. Its existing Python 3.14, Poetry, AlgoKit LocalNet tests, import checks, and CI workflow are the native verification boundary. Because those helpers are a real public contract, the migration requires stable requirements and full SDD coverage rather than a zero-coverage exception.

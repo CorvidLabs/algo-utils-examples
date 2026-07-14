@@ -5,4 +5,4 @@ artifact: design
 
 # Design
 
-Keep existing workflows and data intact. Add a separate trust job pinned to the immutable Trust v1.0.0 commit. Trust invokes a Fledge lane for Python 3.14, Poetry, AlgoKit LocalNet tests, imports, and module validation, uses advisory coverage zero, blocking risk, progressive provenance, and disables Trust-managed Atlas.
+Keep all Python source, tests, examples, dependencies, and the existing CI workflow intact. Add one stable canonical contract with ten requirements covering the existing helper APIs, LocalNet demonstration, native verification lane, and immutable Trust workflow. Trust invokes the preserved Python 3.14, Poetry, AlgoKit LocalNet, import, and module checks through Fledge, enforces 100% contract coverage and blocking risk, uses progressive provenance, and leaves Trust-managed Atlas disabled.
