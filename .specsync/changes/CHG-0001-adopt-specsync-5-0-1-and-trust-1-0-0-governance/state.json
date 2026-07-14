@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "id": "CHG-0001-adopt-specsync-5-0-1-and-trust-1-0-0-governance",
+  "slug": "adopt-specsync-5-0-1-and-trust-1-0-0-governance",
+  "title": "Adopt SpecSync 5.0.1 and Trust 1.0.0 governance",
+  "description": "Adopt SpecSync 5.0.1 and Trust 1.0.0 governance",
+  "kind": "migration",
+  "state": "accepted",
+  "base_commit": "75080733685c28e1a2da2fd639f5bbf5fa9cccab",
+  "created_at": 1783891929,
+  "updated_at": 1783988429,
+  "affected_specs": [
+    "algorand-examples"
+  ],
+  "affected_paths": [
+    ".github/",
+    ".specsync/",
+    ".trust.toml",
+    ".augur.toml",
+    ".attest.json",
+    "fledge.toml",
+    "specs/",
+    "src/algo_utils_examples/",
+    "AGENTS.md"
+  ],
+  "no_spec_change": false,
+  "no_spec_change_rationale": null,
+  "acceptance_criteria": [
+    "Ten stable requirements accurately describe the existing account, payment, atomic-group, asset, demonstration, native verification, and Trust boundaries",
+    "The existing Python source, tests, README, dependency files, and CI workflow remain byte-for-byte unchanged",
+    "SpecSync strict coverage passes at 100%; all four agents, Trust doctor, the LocalNet verification lane, and the full Trust gate pass"
+  ],
+  "selected_artifacts": [
+    "context",
+    "research",
+    "design",
+    "plan",
+    "tasks",
+    "testing",
+    "docs"
+  ],
+  "dependencies": [],
+  "answers": {
+    "architecture_risk": "yes",
+    "public_contract": "yes"
+  }
+}
