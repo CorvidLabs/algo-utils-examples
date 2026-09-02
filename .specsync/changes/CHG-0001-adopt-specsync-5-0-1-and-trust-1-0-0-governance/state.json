@@ -5,10 +5,11 @@
   "title": "Adopt SpecSync 5.0.1 and Trust 1.0.0 governance",
   "description": "Adopt SpecSync 5.0.1 and Trust 1.0.0 governance",
   "kind": "migration",
-  "state": "accepted",
+  "state": "verifying",
+  "canonical_applied": true,
   "base_commit": "75080733685c28e1a2da2fd639f5bbf5fa9cccab",
   "created_at": 1783891929,
-  "updated_at": 1783988429,
+  "updated_at": 1784413902,
   "affected_specs": [
     "algorand-examples"
   ],
